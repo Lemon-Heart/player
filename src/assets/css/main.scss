@@ -1,0 +1,19 @@
+// VARIABLES AND MIXINS
+@import './base/variables';
+@import './base/mixins';
+// DEFAULTS
+@import './base/fonts';
+@import './base/normalize';
+@import './base/common';
+
+// BASE
+@import './modules/base/footer.scss';
+@import './modules/base/header.scss';
+@import './modules/base/main.scss';
+
+// UI
+@import './modules/ui/links.scss';
+@import './modules/ui/input-range.scss';
+
+// MODULES
+@import './modules/player.scss';
