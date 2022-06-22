@@ -45,18 +45,20 @@ import BPrev from './buttons/b-prev.vue'
 
 const player = ref()
 
-const tracks = reactive([])
-async function getTracks() {
-  let response = await fetch('/test.php')
-  if (response.ok) {
-    let json = await response.json()
-    tracks.push.apply(tracks, json)
-  } else {
-    alert("Ошибка HTTP: " + response.status)
-  }
-}
-getTracks()
-// const tracks = reactive(['EPOHA_STRANSTVIJ_-_CHelovek_Iz_ZHeleza_(iPleer.fm)'])
+// const tracks = reactive([])
+// async function getTracks() {
+//   let response = await fetch('/test.php')
+//   if (response.ok) {
+//     let json = await response.json()
+//     tracks.push.apply(tracks, json)
+//   } else {
+//     alert("Ошибка HTTP: " + response.status)
+//   }
+// }
+// getTracks()
+const tracks = reactive([
+  '01_storm_inside_nas_bolshe_net_myzuka', 'ApostaZiya - ', 'EPOHA_STRANSTVIJ_-_CHelovek_Iz_ZHeleza_(iPleer.fm)', 'ESSE - Геральт', 'Evil Not Alone – Письмо', 'ex-сектор-газа-кладбище-сердец'
+])
 
 const marquee = ref()
 const marqueeActive = () => {
