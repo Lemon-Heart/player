@@ -7,7 +7,7 @@
   box-shadow: 0 1px 6px rgba(0, 0, 52, .25);
   padding: 20px;
   border-radius: 20px;
-  background-image: linear-gradient(315deg, rgba(238,192,198,.4) 0%, rgba(126,232,250,.4) 74%);  
+  background-image: linear-gradient(315deg, rgba(238,192,198,.4) 0%, rgba(126,232,250,.4) 74%);
   h2 {
     font-size: 30px;
     text-align: center;
@@ -44,10 +44,19 @@
     grid-gap: 20px;
     justify-content: space-between;
     align-items: center;
+    @include r(500px) {
+      grid-gap: 10px;
+    }
+    @include r(400px) {
+      grid-gap: 0px;
+    }
   }
   &__volume {
     max-width: 200px;
     margin: auto;
+    @include r(440px) {
+      max-width: 100px;
+    }
   }
   button, a {
     border: none;
