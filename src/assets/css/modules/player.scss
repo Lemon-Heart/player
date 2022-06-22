@@ -4,12 +4,18 @@
   flex-direction: column;
   max-width: 600px;
   width: 100%;
+  box-shadow: 0 1px 6px rgba(0, 0, 52, .25);
+  padding: 20px;
+  border-radius: 20px;
+  background-image: linear-gradient(315deg, rgba(238,192,198,.4) 0%, rgba(126,232,250,.4) 74%);  
   h2 {
     font-size: 30px;
     text-align: center;
-  }
-  &__img {
-
+    margin-bottom: 20px;
+    color: $main;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: marquee 10s linear infinite alternate;
   }
   &__timing {
     display: flex;
@@ -37,37 +43,82 @@
     display: flex;
     grid-gap: 20px;
     justify-content: space-between;
+    align-items: center;
+  }
+  &__volume {
+    max-width: 200px;
+    margin: auto;
   }
   button, a {
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $main;
+    background-color: transparent;
     cursor: pointer;
     width: 50px;
     height: 50px;
     border-radius: 10px;
-    color: white;
+    color: $main;
     transition: .2s;
-    font-size: 20px;
+    font-size: 30px;
     line-height: 0;
     &:hover {
-      background-color: $mainHover;
+      color: $mainsecond
     }
   }
   [repeat] {
-    font-size: 30px;
+    font-size: 40px;
   }
   [repeat="Повторить трек"] {
     position: relative;
     &::before {
       content: '1';
       position: absolute;
-      font-size: 10px;
+      font-size: 15px;
     }
   }
-  [repeat="Не повторять"] {
+  [repeat="Не повторять"], [random="false"] {
     color: $grey;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 15px;
+    margin: 20px 0;
+    padding: 4px 2px;
+    max-height: 400px;
+    overflow-y: auto;
+    color: $main;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #ccc;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $mainHover;
+      border-radius: 10px;
+    }
+  }
+  &__track {
+    box-shadow: 0 1px 3px rgba(115,74,232,.5);
+    transition: .2s;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    &.active {
+      color: white;
+      border: none;
+      cursor: default;
+      background-image: linear-gradient(315deg, $mainsecond 0%, $main 75%);
+    }
+    &:not(.active):hover {
+      box-shadow: 0 1px 3px rgb(115,74,232);
+    }
+  }
+  &__pos {
+    text-align: right;
   }
 }

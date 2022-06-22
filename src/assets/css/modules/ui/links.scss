@@ -1,9 +1,9 @@
 a {
   transition: .1s;
   &:hover {
-    color: $linksDefault;
+    color: $mainsecond;
   }
   &.active, &.exact-active {
-    color: $linksDefault;
+    color: $mainsecond;
   }
 }

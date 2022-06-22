@@ -1,0 +1,4 @@
+@keyframes marquee {
+  from { text-indent: 0%; }
+  to { text-indent: var(--change); }
+}
