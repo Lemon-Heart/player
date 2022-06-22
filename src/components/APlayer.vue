@@ -13,7 +13,7 @@
     <input ref="progress" type="range" min="0" :max="duration" @input="setProgress">
     <div class="player__nav">
       <b-prev  @click="prev"/>
-      <button :title="isPlay ? 'Пауза' : 'Воспроизвести'" @click="p">{{ isPlay ? '❚❚' : '▶' }}</button>
+      <b-p :title="isPlay ? 'Пауза' : 'Воспроизвести'" :isPlay="isPlay" @click="p"/>
       <b-next @click="next"/>
       <b-repeat :repeat="repeatActive" :title="repeatActive" @click="loop"/>
       <b-random :random="random" @click="random = !random" />
@@ -42,6 +42,7 @@ import BRandom from './buttons/b-random.vue'
 import BRepeat from './buttons/b-repeat.vue'
 import BNext from './buttons/b-next.vue'
 import BPrev from './buttons/b-prev.vue'
+import BP from './buttons/b-p.vue'
 
 const player = ref()
 
@@ -140,6 +141,9 @@ const isPlay = ref(false)
 watch(isPlay, (newValue) => {
   if (newValue) {
     audio.value.play()
+    setTimeout(() => {
+      marqueeActive()
+    }, 100)
   } else {
     audio.value.pause()
   }

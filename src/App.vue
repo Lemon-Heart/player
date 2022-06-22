@@ -1,14 +1,14 @@
 <template>
-  <header>
+  <!-- <header>
     <router-link :to="{name: 'HomePage'}">PLAYER</router-link>
     <router-link :to="{name: 'TestPage'}">TEST</router-link>
-  </header>
+  </header> -->
   <main>
     <router-view />
   </main>
-  <footer>
+  <!-- <footer>
     FOOTER
-  </footer>
+  </footer> -->
 </template>
 
 <script setup>
